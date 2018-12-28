@@ -1,4 +1,5 @@
 package base64crypto;
+import java.util.Base64;
 
 public class Base64Crypto {
 
@@ -14,14 +15,15 @@ public class Base64Crypto {
     }
 
     static String encrypt(String plainText) {
-        String result = plainText;
-        // Compelet it
-        return result;
+         String result = plainText;
+       result=Base64.getEncoder().encodeToString(result.getBytes());
+         return result;
     }
 
     static String decrypt(String base64) {
         String result = base64;
-        // Compelet it
+        byte b[]=Base64.getDecoder().decode(result);
+        result=new String(b);
         return result;
     }
     
